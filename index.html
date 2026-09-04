@@ -11,7 +11,6 @@
     --navy: #17233d;
     --navy-2: #253a63;
     --gold: #b9902f;
-    --gold-light: #e8d8ae;
     --paper: #f3f4f0;
     --panel: #ffffff;
     --line: #d9dad3;
@@ -38,30 +37,32 @@
     padding:36px 24px 30px;
     border-bottom:4px solid var(--gold);
   }
-  header .inner{max-width:980px;margin:0 auto;}
+  header .inner{max-width:640px;margin:0 auto;}
+  header .brand{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:700;
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 8px;
+  }
   header h1{
     font-family:'Source Serif 4', serif;
     font-weight:600;
     font-size:1.9rem;
-    margin:0 0 6px;
+    margin:0;
     letter-spacing:-0.01em;
   }
-  header p{
-    margin:0;
-    color:#c7cede;
-    font-size:0.98rem;
-    max-width:640px;
-  }
-  main{max-width:980px;margin:0 auto;padding:0 24px;}
+  main{max-width:640px;margin:0 auto;padding:0 24px;}
 
   .mode-switch{
     display:flex;
     gap:2px;
-    margin:28px 0 4px;
+    margin:28px 0 22px;
     background:var(--line);
     padding:2px;
     border-radius:var(--radius);
-    max-width:460px;
   }
   .mode-switch button{
     flex:1;
@@ -81,14 +82,14 @@
     color:#fff;
   }
 
-  section.panel{display:none; margin-top:26px;}
+  section.panel{display:none;}
   section.panel.active{display:block;}
 
   .tier-select{
     display:flex;
     flex-direction:column;
     gap:8px;
-    margin-bottom:24px;
+    margin-bottom:20px;
     background:var(--panel);
     border:1px solid var(--line);
     padding:16px 18px;
@@ -118,69 +119,19 @@
     margin-top:2px;
   }
 
-  .layout{display:grid; grid-template-columns:1.1fr 1fr; gap:22px; align-items:start;}
-  @media(max-width:760px){ .layout{grid-template-columns:1fr;} }
-
   .card{
     background:var(--panel);
     border:1px solid var(--line);
     border-radius:var(--radius);
-    padding:20px 22px 22px;
+    padding:22px 22px 24px;
   }
-  .card + .card{margin-top:18px;}
 
   .card h2{
     font-family:'Source Serif 4', serif;
     font-size:1.08rem;
     font-weight:600;
-    margin:0 0 3px;
-    color:var(--navy);
-  }
-  .card .sub{
-    font-size:0.82rem;
-    color:var(--ink-soft);
     margin:0 0 14px;
-  }
-
-  table.award-table{width:100%; border-collapse:collapse; font-size:0.88rem;}
-  table.award-table th{
-    text-align:left;
-    font-size:0.72rem;
-    text-transform:uppercase;
-    letter-spacing:0.05em;
-    color:var(--ink-soft);
-    font-weight:600;
-    padding:0 6px 8px;
-    border-bottom:1px solid var(--line);
-  }
-  table.award-table td{
-    padding:7px 6px;
-    border-bottom:1px solid #ececea;
-    vertical-align:middle;
-  }
-  table.award-table tr:last-child td{border-bottom:none;}
-  table.award-table .lvl{font-weight:600; white-space:nowrap;}
-  table.award-table .range{color:var(--ink-soft);}
-  .amt-input{
-    width:92px;
-    padding:5px 7px;
-    border:1px solid var(--line);
-    border-radius:2px;
-    font-family:'IBM Plex Sans', sans-serif;
-    font-size:0.88rem;
-    text-align:right;
-  }
-  .amt-input:focus{outline:2px solid var(--gold); outline-offset:1px;}
-
-  .reset-link{
-    background:none;
-    border:none;
-    color:var(--navy-2);
-    font-size:0.78rem;
-    text-decoration:underline;
-    cursor:pointer;
-    padding:0;
-    margin-top:10px;
+    color:var(--navy);
   }
 
   .field{margin-bottom:14px;}
@@ -191,49 +142,23 @@
     margin-bottom:5px;
     color:var(--ink);
   }
-  .field input[type=number], .field select{
+  .field input[type=number]{
     width:100%;
-    padding:9px 10px;
+    padding:10px 11px;
     border:1px solid var(--line);
     border-radius:2px;
     font-family:'IBM Plex Sans', sans-serif;
-    font-size:0.95rem;
+    font-size:0.98rem;
     background:#fff;
   }
-  .field input:focus, .field select:focus{outline:2px solid var(--gold); outline-offset:1px;}
+  .field input:focus{outline:2px solid var(--gold); outline-offset:1px;}
   .field-row{display:flex; gap:10px;}
   .field-row .field{flex:1;}
-  .pic-field{
-    border-top:1px solid var(--line);
-    padding-top:14px;
-    margin-top:4px;
-  }
-  .pic-field > label{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-weight:600;
-  }
-  .pic-field input[type=checkbox]{width:16px; height:16px;}
-
-  .calc-btn{
-    width:100%;
-    background:var(--navy);
-    color:#fff;
-    border:none;
-    padding:12px;
-    font-family:'IBM Plex Sans', sans-serif;
-    font-weight:600;
-    font-size:0.94rem;
-    border-radius:2px;
-    cursor:pointer;
-    margin-top:4px;
-  }
-  .calc-btn:hover{background:var(--navy-2);}
+  .field-hint{font-size:0.78rem; color:var(--ink-soft); margin-top:-8px; margin-bottom:16px;}
 
   .result{
-    margin-top:18px;
-    padding:18px 20px;
+    margin-top:20px;
+    padding:20px 22px;
     border-radius:var(--radius);
     background:var(--green-bg);
     border:1px solid #cfe4d8;
@@ -241,38 +166,29 @@
   }
   .result.show{display:block;}
   .result.ineligible{background:var(--red-bg); border-color:#e6cec8;}
+  .result .kicker{
+    font-size:0.76rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+    font-weight:600;
+    margin-bottom:6px;
+  }
   .result .figure{
     font-family:'Source Serif 4', serif;
-    font-size:2.1rem;
+    font-size:1.7rem;
     font-weight:700;
     color:var(--green);
-    line-height:1;
+    line-height:1.2;
   }
-  .result.ineligible .figure{color:var(--red); font-size:1.15rem;}
-  .result .detail{
-    font-size:0.85rem;
-    color:var(--ink-soft);
-    margin-top:8px;
-  }
-  .result .detail strong{color:var(--ink);}
-
-  .ref-note{
-    font-size:0.82rem;
-    color:var(--ink-soft);
-    background:#f6f4ec;
-    border:1px solid var(--gold-light);
-    padding:10px 12px;
-    border-radius:2px;
-    margin-bottom:16px;
-  }
-
-  footer{max-width:980px; margin:36px auto 0; padding:0 24px; font-size:0.78rem; color:var(--ink-soft);}
+  .result.ineligible .figure{color:var(--red); font-size:1.05rem;}
 </style>
 </head>
 <body>
 
 <header>
   <div class="inner">
+    <p class="brand">New College of Florida</p>
     <h1>PHS Scholarship Estimator</h1>
   </div>
 </header>
@@ -286,66 +202,28 @@
 
   <!-- ================= FTIC PANEL ================= -->
   <section class="panel active" id="panel-ftic">
-    <div class="layout">
-      <div class="col-tables">
-        <div class="card">
-          <h2>GPA Award Table</h2>
-          <p class="sub">NCF weighted GPA</p>
-          <table class="award-table" id="ftic-gpa-table">
-            <thead><tr><th>Level</th><th>GPA Range</th><th>Award</th></tr></thead>
-            <tbody></tbody>
-          </table>
+    <div class="card">
+      <h2>Estimate an Award</h2>
+      <div class="field">
+        <label for="ftic-gpa-input">High School Weighted GPA</label>
+        <input type="number" id="ftic-gpa-input" step="0.01" min="0" max="5" placeholder="e.g. 3.85">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="ftic-sat-input">SAT</label>
+          <input type="number" id="ftic-sat-input" placeholder="e.g. 1310">
         </div>
-        <div class="card">
-          <h2>Test Score Award Table</h2>
-          <p class="sub">SAT / ACT / CLT</p>
-          <table class="award-table" id="ftic-test-table">
-            <thead><tr><th>Level</th><th>Score Range</th><th>Award</th></tr></thead>
-            <tbody></tbody>
-          </table>
-          <button type="button" class="reset-link" data-reset="ftic">Reset to default amounts</button>
+        <div class="field">
+          <label for="ftic-act-input">ACT</label>
+          <input type="number" id="ftic-act-input" placeholder="e.g. 27">
+        </div>
+        <div class="field">
+          <label for="ftic-clt-input">CLT</label>
+          <input type="number" id="ftic-clt-input" placeholder="e.g. 90">
         </div>
       </div>
-
-      <div class="col-calc">
-        <div class="card">
-          <h2>Estimate an Award</h2>
-          <p class="sub">Enter any test scores available — the highest resulting level is used. GPA and test levels stack within the window set below; otherwise the higher of the two applies.</p>
-          <div class="field">
-            <label for="ftic-gpa-input">NCF Weighted GPA</label>
-            <input type="number" id="ftic-gpa-input" step="0.01" min="0" max="5" placeholder="e.g. 3.85">
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="ftic-sat-input">SAT</label>
-              <input type="number" id="ftic-sat-input" placeholder="e.g. 1310">
-            </div>
-            <div class="field">
-              <label for="ftic-act-input">ACT</label>
-              <input type="number" id="ftic-act-input" placeholder="e.g. 27">
-            </div>
-            <div class="field">
-              <label for="ftic-clt-input">CLT</label>
-              <input type="number" id="ftic-clt-input" placeholder="e.g. 90">
-            </div>
-          </div>
-          <div class="field">
-            <label for="ftic-stack-window">Stacking Window (levels apart that still stack)</label>
-            <input type="number" id="ftic-stack-window" min="0" max="5" step="1" value="1">
-          </div>
-          <div class="field pic-field">
-            <label><input type="checkbox" id="ftic-pic-check"> Presidential Interview Candidate (PIC)</label>
-            <div class="field-row" style="margin-top:8px;">
-              <div class="field">
-                <label for="ftic-pic-amount">PIC Award Amount</label>
-                <input type="number" id="ftic-pic-amount" step="100" value="15000">
-              </div>
-            </div>
-          </div>
-          <button type="button" class="calc-btn" id="ftic-calc-btn">Calculate estimate</button>
-          <div class="result" id="ftic-result"></div>
-        </div>
-      </div>
+      <div class="field-hint">Enter a GPA and/or any test score you have — a result appears once at least one is entered.</div>
+      <div class="result" id="ftic-result"></div>
     </div>
   </section>
 
@@ -367,89 +245,72 @@
       </label>
       <label>
         <input type="radio" name="tier" value="low">
-        <span>Fewer Than 30 Completed Credits<span class="tier-note">Including college-level Math and English Composition — scored on Freshman/FTIC criteria</span></span>
+        <span>Fewer Than 30 Completed Credits<span class="tier-note">Evaluated on Freshman/FTIC criteria</span></span>
       </label>
     </div>
 
-    <div class="layout">
-      <div class="col-tables" id="transfer-tables"></div>
-      <div class="col-calc">
-        <div class="card">
-          <h2>Estimate an Award</h2>
-          <p class="sub" id="transfer-calc-sub">Enter the student's college cumulative GPA.</p>
-          <div id="transfer-calc-fields"></div>
-          <button type="button" class="calc-btn" id="transfer-calc-btn">Calculate estimate</button>
-          <div class="result" id="transfer-result"></div>
-        </div>
+    <div class="card">
+      <h2>Estimate an Award</h2>
+      <div class="field">
+        <label for="transfer-gpa-input">College Cumulative GPA</label>
+        <input type="number" id="transfer-gpa-input" step="0.01" min="0" max="4" placeholder="e.g. 3.40">
       </div>
+      <div id="transfer-test-fields" style="display:none;">
+        <div class="field-row">
+          <div class="field">
+            <label for="transfer-sat-input">SAT</label>
+            <input type="number" id="transfer-sat-input" placeholder="e.g. 1180">
+          </div>
+          <div class="field">
+            <label for="transfer-act-input">ACT</label>
+            <input type="number" id="transfer-act-input" placeholder="e.g. 24">
+          </div>
+          <div class="field">
+            <label for="transfer-clt-input">CLT</label>
+            <input type="number" id="transfer-clt-input" placeholder="e.g. 78">
+          </div>
+        </div>
+        <div class="field-hint">Fewer than 30 credits is scored like a Freshman/FTIC applicant — GPA and test scores both count.</div>
+      </div>
+      <div class="result" id="transfer-result"></div>
     </div>
   </section>
 
 </main>
 
-
 <script>
-/* ---------- data ---------- */
-const defaultGpaLevels = [
-  {level:1, label:"Level 1", range:"4.25 & above", min:4.25, amount:6500},
-  {level:2, label:"Level 2", range:"4.00 – 4.24", min:4.00, amount:4000},
-  {level:3, label:"Level 3", range:"3.75 – 3.99", min:3.75, amount:3500},
-  {level:4, label:"Level 4", range:"3.50 – 3.74", min:3.50, amount:2000},
-  {level:5, label:"Level 5", range:"3.25 – 3.49", min:3.25, amount:1000},
-  {level:6, label:"Level 6", range:"3.24 & below", min:-Infinity, amount:250},
+/* ---------- FTIC award data (Fall 2026 PHS Decision Framework) ---------- */
+const gpaLevels = [
+  {level:1, min:4.25, amount:8000},
+  {level:2, min:4.00, amount:5000},
+  {level:3, min:3.75, amount:3500},
+  {level:4, min:3.50, amount:2500},
+  {level:5, min:3.25, amount:1000},
+  {level:6, min:-Infinity, amount:250},
 ];
-
-const defaultTestLevels = [
-  {level:1, label:"Level 1", range:"1400+ SAT / 31 ACT / 100 CLT", sat:1400, act:31, clt:100, amount:8500},
-  {level:2, label:"Level 2", range:"1340–1399 SAT / 29 ACT / 96 CLT", sat:1340, act:29, clt:96, amount:6000},
-  {level:3, label:"Level 3", range:"1210–1339 SAT / 25 ACT / 84 CLT", sat:1210, act:25, clt:84, amount:3500},
-  {level:4, label:"Level 4", range:"1100–1209 SAT / 22 ACT / 72 CLT", sat:1100, act:22, clt:72, amount:2000},
-  {level:5, label:"Level 5", range:"1099 & below SAT / 19 ACT / 64 CLT", sat:-Infinity, act:19, clt:64, amount:250},
+const testLevels = [
+  {level:1, sat:1400, act:31, clt:100, amount:8000},
+  {level:2, sat:1340, act:29, clt:96, amount:5000},
+  {level:3, sat:1210, act:25, clt:84, amount:4000},
+  {level:4, sat:1100, act:22, clt:72, amount:2000},
+  {level:5, sat:-Infinity, act:19, clt:64, amount:250},
 ];
-
-let gpaLevels = defaultGpaLevels.map(r => ({...r}));
-let testLevels = defaultTestLevels.map(r => ({...r}));
+const MIN_AWARD = 500;
+const PIC_AWARD = 23733;
 
 const transferTierData = {
-  transform: {
-    name: "Transform Partner School AA Degree",
-    bands: [ {label:"3.50 – 4.00 GPA", min:3.50, amount:10000}, {label:"3.00 – 3.49 GPA", min:3.00, amount:7500} ],
-    minGpa: 3.00
-  },
-  aa: {
-    name: "Students with an AA Degree",
-    bands: [ {label:"3.50 – 4.00 GPA", min:3.50, amount:7500}, {label:"3.00 – 3.49 GPA", min:3.00, amount:5000} ],
-    minGpa: 3.00
-  },
-  mid: {
-    name: "Mid-Level Transfer",
-    bands: [ {label:"3.50 – 4.00 GPA", min:3.50, amount:7500}, {label:"3.00 – 3.49 GPA", min:3.00, amount:5000} ],
-    minGpa: 3.00
-  }
+  transform: { name: "Transform Partner School AA Degree", bands: [ {min:3.50, amount:10000}, {min:3.00, amount:7500} ] },
+  aa:        { name: "Students with an AA Degree",          bands: [ {min:3.50, amount:7500},  {min:3.00, amount:5000} ] },
+  mid:       { name: "Mid-Level Transfer",                  bands: [ {min:3.50, amount:7500},  {min:3.00, amount:5000} ] },
 };
 
 /* ---------- helpers ---------- */
 const fmt = n => "$" + Math.round(n).toLocaleString("en-US");
-
-function renderAwardTable(tbodyEl, rows, key) {
-  tbodyEl.innerHTML = "";
-  rows.forEach((row, i) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td class="lvl">${row.label}</td>
-      <td class="range">${row.range}</td>
-      <td><input class="amt-input" type="number" step="50" data-idx="${i}" value="${row.amount}"></td>
-    `;
-    tbodyEl.appendChild(tr);
-  });
-  tbodyEl.querySelectorAll("input.amt-input").forEach(inp => {
-    inp.addEventListener("input", () => {
-      const idx = +inp.dataset.idx;
-      const val = parseFloat(inp.value);
-      rows[idx].amount = isNaN(val) ? 0 : val;
-    });
-  });
-}
+const fmtRange = n => {
+  const low = Math.max(0, Math.round(n) - 1000);
+  const high = Math.round(n) + 1000;
+  return `${fmt(low)} – ${fmt(high)}`;
+};
 
 function gpaLevelFor(gpa) {
   return gpaLevels.find(r => gpa >= r.min) || gpaLevels[gpaLevels.length - 1];
@@ -458,9 +319,6 @@ function testLevelForScore(type, score) {
   if (score === null || isNaN(score)) return null;
   return testLevels.find(r => score >= r[type]) || testLevels[testLevels.length - 1];
 }
-
-// Checks SAT/ACT/CLT scores (any subset may be blank) and returns the row
-// for whichever entered score yields the best (lowest-numbered) level.
 function bestTestLevel(sat, act, clt) {
   const candidates = [
     testLevelForScore("sat", sat),
@@ -471,210 +329,97 @@ function bestTestLevel(sat, act, clt) {
   return candidates.reduce((best, r) => (r.level < best.level ? r : best));
 }
 
-/* ---------- FTIC panel ---------- */
-const fticGpaBody = document.querySelector("#ftic-gpa-table tbody");
-const fticTestBody = document.querySelector("#ftic-test-table tbody");
-renderAwardTable(fticGpaBody, gpaLevels, "gpa");
-renderAwardTable(fticTestBody, testLevels, "test");
+// FTIC / "fewer than 30 credits" prediction: no stacking — higher of GPA vs
+// Test applies, PIC auto-detected at the top band, $500 minimum guaranteed.
+function predictFtic(gpa, tRow) {
+  const hasGpa = !isNaN(gpa);
+  const gRow = hasGpa ? gpaLevelFor(gpa) : null;
 
-document.querySelector('[data-reset="ftic"]').addEventListener("click", () => {
-  gpaLevels = defaultGpaLevels.map(r => ({...r}));
-  testLevels = defaultTestLevels.map(r => ({...r}));
-  renderAwardTable(fticGpaBody, gpaLevels, "gpa");
-  renderAwardTable(fticTestBody, testLevels, "test");
-});
-
-function computeFticAward(gpa, tRow, stackWindow) {
-  const gRow = gpaLevelFor(gpa);
-
-  if (!tRow) {
-    return {
-      award: gRow.amount,
-      detail: `GPA Level ${gRow.level} (${fmt(gRow.amount)}) applied — no qualifying test score entered.`
-    };
+  if (hasGpa && gRow.level === 1 && tRow && tRow.level === 1) {
+    return PIC_AWARD;
   }
-
-  const diff = Math.abs(gRow.level - tRow.level);
-  if (diff <= stackWindow) {
-    return {
-      award: gRow.amount + tRow.amount,
-      detail: `GPA Level ${gRow.level} (${fmt(gRow.amount)}) + Test Level ${tRow.level} (${fmt(tRow.amount)}) — awards stack, levels are within ${stackWindow} of each other.`
-    };
-  }
-  const better = gRow.amount >= tRow.amount ? "GPA" : "Test";
-  return {
-    award: Math.max(gRow.amount, tRow.amount),
-    detail: `GPA Level ${gRow.level} (${fmt(gRow.amount)}) vs Test Level ${tRow.level} (${fmt(tRow.amount)}) — more than ${stackWindow} level(s) apart, so only the higher award (${better}) applies.`
-  };
+  const amounts = [];
+  if (gRow) amounts.push(gRow.amount);
+  if (tRow) amounts.push(tRow.amount);
+  if (amounts.length === 0) return null;
+  return Math.max(...amounts, MIN_AWARD);
 }
 
-document.getElementById("ftic-calc-btn").addEventListener("click", () => {
+/* ---------- FTIC panel ---------- */
+function renderFticResult() {
   const resultEl = document.getElementById("ftic-result");
-  const isPic = document.getElementById("ftic-pic-check").checked;
-
-  if (isPic) {
-    const picAmount = parseFloat(document.getElementById("ftic-pic-amount").value) || 0;
-    resultEl.className = "result show";
-    resultEl.innerHTML = `<div class="figure">${fmt(picAmount)}</div><div class="detail">Presidential Interview Candidate award applied in place of the GPA/Test grid.</div>`;
-    return;
-  }
-
   const gpa = parseFloat(document.getElementById("ftic-gpa-input").value);
-  if (isNaN(gpa)) {
-    resultEl.className = "result show ineligible";
-    resultEl.innerHTML = `<div class="figure">Enter a GPA to estimate an award.</div>`;
-    return;
-  }
   const sat = parseFloat(document.getElementById("ftic-sat-input").value);
   const act = parseFloat(document.getElementById("ftic-act-input").value);
   const clt = parseFloat(document.getElementById("ftic-clt-input").value);
-  const stackWindow = parseInt(document.getElementById("ftic-stack-window").value, 10) || 0;
   const tRow = bestTestLevel(sat, act, clt);
 
-  const { award, detail } = computeFticAward(gpa, tRow, stackWindow);
+  const award = predictFtic(gpa, tRow);
+  if (award === null) {
+    resultEl.className = "result";
+    resultEl.innerHTML = "";
+    return;
+  }
+  const isPic = award === PIC_AWARD;
   resultEl.className = "result show";
-  resultEl.innerHTML = `<div class="figure">${fmt(award)}</div><div class="detail">${detail}</div>`;
+  resultEl.innerHTML = `<div class="kicker">Estimated PHS Award</div><div class="figure">${isPic ? fmt(award) : fmtRange(award)}</div>`;
+}
+["ftic-gpa-input","ftic-sat-input","ftic-act-input","ftic-clt-input"].forEach(id => {
+  document.getElementById(id).addEventListener("input", renderFticResult);
 });
 
 /* ---------- Transfer panel ---------- */
-const transferTablesEl = document.getElementById("transfer-tables");
-const transferCalcFieldsEl = document.getElementById("transfer-calc-fields");
-const transferCalcSub = document.getElementById("transfer-calc-sub");
-const transferResultEl = document.getElementById("transfer-result");
-
-function renderSimpleTierTable(tierKey) {
-  const tier = transferTierData[tierKey];
-  const rows = tier.bands.map((b,i)=>`
-    <tr>
-      <td class="range">${b.label}</td>
-      <td><input class="amt-input" type="number" step="50" data-band="${i}" value="${b.amount}"></td>
-    </tr>`).join("");
-  transferTablesEl.innerHTML = `
-    <div class="card">
-      <h2>${tier.name}</h2>
-      <p class="sub">Award by cumulative GPA (min. ${tier.minGpa.toFixed(2)} GPA required)</p>
-      <table class="award-table">
-        <thead><tr><th>GPA Band</th><th>Award</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>`;
-  transferTablesEl.querySelectorAll("input.amt-input").forEach(inp => {
-    inp.addEventListener("input", () => {
-      const val = parseFloat(inp.value);
-      tier.bands[+inp.dataset.band].amount = isNaN(val) ? 0 : val;
-    });
-  });
-
-  transferCalcSub.textContent = "Enter the student's college cumulative GPA.";
-  transferCalcFieldsEl.innerHTML = `
-    <div class="field">
-      <label for="transfer-gpa-input">College Cumulative GPA</label>
-      <input type="number" id="transfer-gpa-input" step="0.01" min="0" max="4" placeholder="e.g. 3.40">
-    </div>`;
-}
-
-function renderLowCreditTable() {
-  transferTablesEl.innerHTML = `
-    <div class="ref-note">This category is scored on the same Freshman/FTIC GPA and Test tables (switch to the "Freshman / FTIC" tab to edit those amounts). A minimum 3.00 college cumulative GPA is required.</div>
-    <div class="card">
-      <h2>GPA Award Table <span style="font-weight:400;color:var(--ink-soft);font-size:0.8rem;">(from Freshman/FTIC)</span></h2>
-      <table class="award-table" id="low-gpa-ref"><thead><tr><th>Level</th><th>GPA Range</th><th>Award</th></tr></thead><tbody></tbody></table>
-    </div>
-    <div class="card">
-      <h2>Test Score Award Table <span style="font-weight:400;color:var(--ink-soft);font-size:0.8rem;">(from Freshman/FTIC)</span></h2>
-      <table class="award-table" id="low-test-ref"><thead><tr><th>Level</th><th>Score Range</th><th>Award</th></tr></thead><tbody></tbody></table>
-    </div>`;
-  const gBody = document.querySelector("#low-gpa-ref tbody");
-  const tBody = document.querySelector("#low-test-ref tbody");
-  gBody.innerHTML = gpaLevels.map(r => `<tr><td class="lvl">${r.label}</td><td class="range">${r.range}</td><td>${fmt(r.amount)}</td></tr>`).join("");
-  tBody.innerHTML = testLevels.map(r => `<tr><td class="lvl">${r.label}</td><td class="range">${r.range}</td><td>${fmt(r.amount)}</td></tr>`).join("");
-
-  transferCalcSub.textContent = "College cumulative GPA and test scores — same criteria as Freshman/FTIC.";
-  transferCalcFieldsEl.innerHTML = `
-    <div class="field">
-      <label for="transfer-low-gpa-input">College Cumulative GPA</label>
-      <input type="number" id="transfer-low-gpa-input" step="0.01" min="0" max="4" placeholder="e.g. 3.10">
-    </div>
-    <div class="field-row">
-      <div class="field">
-        <label for="transfer-low-sat-input">SAT</label>
-        <input type="number" id="transfer-low-sat-input" placeholder="e.g. 1180">
-      </div>
-      <div class="field">
-        <label for="transfer-low-act-input">ACT</label>
-        <input type="number" id="transfer-low-act-input" placeholder="e.g. 24">
-      </div>
-      <div class="field">
-        <label for="transfer-low-clt-input">CLT</label>
-        <input type="number" id="transfer-low-clt-input" placeholder="e.g. 78">
-      </div>
-    </div>
-    <div class="field">
-      <label for="transfer-low-stack-window">Stacking Window (levels apart that still stack)</label>
-      <input type="number" id="transfer-low-stack-window" min="0" max="5" step="1" value="1">
-    </div>`;
-}
+const transferTestFieldsEl = document.getElementById("transfer-test-fields");
 
 function currentTier() {
   return document.querySelector('input[name="tier"]:checked').value;
 }
 
-function renderTierUI() {
+function renderTransferResult() {
   const tier = currentTier();
-  transferResultEl.className = "result";
-  transferResultEl.innerHTML = "";
-  if (tier === "low") renderLowCreditTable();
-  else renderSimpleTierTable(tier);
-}
-
-document.querySelectorAll('input[name="tier"]').forEach(r => r.addEventListener("change", renderTierUI));
-renderTierUI();
-
-document.getElementById("transfer-calc-btn").addEventListener("click", () => {
-  const tier = currentTier();
-
-  if (tier === "low") {
-    const gpa = parseFloat(document.getElementById("transfer-low-gpa-input").value);
-
-    if (isNaN(gpa)) {
-      transferResultEl.className = "result show ineligible";
-      transferResultEl.innerHTML = `<div class="figure">Enter a GPA to estimate an award.</div>`;
-      return;
-    }
-    if (gpa < 3.00) {
-      transferResultEl.className = "result show ineligible";
-      transferResultEl.innerHTML = `<div class="figure">Not eligible for PHS</div><div class="detail">This category requires a 3.00 or higher college cumulative GPA.</div>`;
-      return;
-    }
-    const sat = parseFloat(document.getElementById("transfer-low-sat-input").value);
-    const act = parseFloat(document.getElementById("transfer-low-act-input").value);
-    const clt = parseFloat(document.getElementById("transfer-low-clt-input").value);
-    const stackWindow = parseInt(document.getElementById("transfer-low-stack-window").value, 10) || 0;
-    const tRow = bestTestLevel(sat, act, clt);
-
-    const { award, detail } = computeFticAward(gpa, tRow, stackWindow);
-    transferResultEl.className = "result show";
-    transferResultEl.innerHTML = `<div class="figure">${fmt(award)}</div><div class="detail">${detail}</div>`;
-    return;
-  }
-
+  const resultEl = document.getElementById("transfer-result");
   const gpa = parseFloat(document.getElementById("transfer-gpa-input").value);
-  const tierInfo = transferTierData[tier];
+
+  transferTestFieldsEl.style.display = tier === "low" ? "block" : "none";
 
   if (isNaN(gpa)) {
-    transferResultEl.className = "result show ineligible";
-    transferResultEl.innerHTML = `<div class="figure">Enter a GPA to estimate an award.</div>`;
+    resultEl.className = "result";
+    resultEl.innerHTML = "";
     return;
   }
+
+  if (tier === "low") {
+    if (gpa >= 3.00) {
+      const sat = parseFloat(document.getElementById("transfer-sat-input").value);
+      const act = parseFloat(document.getElementById("transfer-act-input").value);
+      const clt = parseFloat(document.getElementById("transfer-clt-input").value);
+      const tRow = bestTestLevel(sat, act, clt);
+      const award = predictFtic(gpa, tRow);
+      resultEl.className = "result show";
+      resultEl.innerHTML = `<div class="kicker">Estimated PHS Award</div><div class="figure">${fmtRange(award)}</div>`;
+    } else if (gpa >= 2.70) {
+      resultEl.className = "result show";
+      resultEl.innerHTML = `<div class="kicker">Estimated PHS Award</div><div class="figure">${fmt(500)}</div>`;
+    } else {
+      resultEl.className = "result show ineligible";
+      resultEl.innerHTML = `<div class="figure">Requires VP approval — no standard estimate available.</div>`;
+    }
+    return;
+  }
+
+  const tierInfo = transferTierData[tier];
   const band = tierInfo.bands.find(b => gpa >= b.min);
-  if (!band) {
-    transferResultEl.className = "result show ineligible";
-    transferResultEl.innerHTML = `<div class="figure">Not eligible for PHS</div><div class="detail">This category requires at least a ${tierInfo.minGpa.toFixed(2)} GPA.</div>`;
-    return;
-  }
-  transferResultEl.className = "result show";
-  transferResultEl.innerHTML = `<div class="figure">${fmt(band.amount)}</div><div class="detail"><strong>${tierInfo.name}</strong> — ${band.label}</div>`;
+  const award = band ? band.amount : MIN_AWARD;
+  resultEl.className = "result show";
+  resultEl.innerHTML = `<div class="kicker">Estimated PHS Award</div><div class="figure">${fmtRange(award)}</div>`;
+}
+
+document.getElementById("transfer-gpa-input").addEventListener("input", renderTransferResult);
+["transfer-sat-input","transfer-act-input","transfer-clt-input"].forEach(id => {
+  document.getElementById(id).addEventListener("input", renderTransferResult);
 });
+document.querySelectorAll('input[name="tier"]').forEach(r => r.addEventListener("change", renderTransferResult));
+renderTransferResult();
 
 /* ---------- mode switch ---------- */
 document.querySelectorAll(".mode-switch button").forEach(btn => {
